@@ -5,7 +5,7 @@ from openai import AsyncOpenAI
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 import logging
-from ai_call_logger import CallLogger
+from PHONX210.ai_call_logger import CallLogger
 from datetime import datetime
 
 logging.basicConfig(level=logging.INFO)
@@ -96,7 +96,7 @@ class AsyncChatCompletion:
             api_key: OpenAI API key (defaults to AI_KEY environment variable)
             model: Model to use for completions
         """
-        self.api_key = api_key or "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"
+        self.api_key = api_key or "API_KEY_HERE"
         self.model = model
         self.client = AsyncOpenAI(api_key=self.api_key)
     
@@ -283,7 +283,7 @@ async def test_prompts_with_create_completion():
     Function to test different prompt scenarios using AsyncChatCompletion.create_completion().
     Mimics internal usage for debugging and validation.
     """
-    from ai_call_logger import CallLogger
+    from PHONX210.ai_call_logger import CallLogger
 
     # Initialize logger and chat completion
     logger = CallLogger()
